@@ -2,8 +2,8 @@ from unittest import TestCase
 
 __author__ = 'andi'
 
+from shouldhavedone import my_math_lab
 
-import my_math_lab
 
 class TestArithmetic(TestCase):
 

@@ -1,7 +1,10 @@
+import re
+
 from flask import Flask
 from flask import request
-import re
-import my_math
+
+from shouldhavedone import my_math
+
 
 app = Flask(__name__)
 
