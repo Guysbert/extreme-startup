@@ -55,3 +55,7 @@ class TestArithmetic(TestCase):
         question = "what is the 22rd number in the Fibonacci sequence"
         self.assertEqual("17711", my_math_lab.fibonnaci(question))
 
+    def test_power(self):
+        question = "what is 13 to the power of 11"
+        self.assertEqual("1792160394037", my_math_lab.power(question))
+

@@ -4,6 +4,7 @@ from flask import Flask
 from flask import request
 
 from shouldhavedone import my_math
+from shouldhavedone import text
 
 
 app = Flask(__name__)
@@ -35,7 +36,7 @@ def hello_world():
     m = re.match("(.*)square and(.*)", question)
     if m:
         return do_answer(my_math.square_cube(question))
-    m = re.match("(.*)banana(.*)", question)
+    m = re.match("(.*)color(.*)", question)
     if m:
         return do_answer("yellow")
     m = re.match("(.*)Prime Minister(.*)", question)
@@ -56,8 +57,17 @@ def hello_world():
     m = re.match("(.*)Fibonacci(.*)", question)
     if m:
         return do_answer(my_math.fibonnaci(question))
+    m = re.match("(.*)power of(.*)", question)
+    if m:
+        return do_answer(my_math.power(question))
+    m = re.match("^what is the english scrabble score of(.*)", question)
+    if m:
+        return do_answer(text.scrabble_score(question))
+    m = re.match("^which of the following is an anagram of(.*)", question)
+    if m:
+        return do_answer(text.anagram(question))
     return ''
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0")

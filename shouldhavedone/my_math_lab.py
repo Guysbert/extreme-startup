@@ -94,3 +94,13 @@ def __calc_fibonnaci(number):
     return a
 
 
+# what is 13 to the power of 11
+def power(question):
+    m = re.match("^.* ([0-9]*) to the power of ([0-9]*)", question)
+    if m:
+        x = int(m.group(1))
+        y = int(m.group(2))
+        return str(int(math.pow(x, y)))
+
+
+
